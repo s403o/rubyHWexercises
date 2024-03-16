@@ -12,13 +12,18 @@ class PalindromeAppTest < Minitest::Test
     assert last_response.ok?
     # assert last_response.body.include?('Sample Sinatra App')
     assert doc(last_response).at_css('h1')
+    assert_equal "Learn Enough Ruby Sample App | Home",
+                  doc(last_response).at_css('title').content
+    assert doc(last_response).at_css('nav')
   end
 
   def test_about
     get '/about'
     assert last_response.ok?
     assert doc(last_response).at_css('h1')
-    # assert last_response.body.include?('About')
+    # assert last_response.body.include?('About')F
+    assert_equal "Learn Enough Ruby Sample App | About",
+                  doc(last_response).at_css('title').content
   end
 
   def test_palindrome
@@ -26,6 +31,7 @@ class PalindromeAppTest < Minitest::Test
     assert last_response.ok?
     assert doc(last_response).at_css('h1')
     # assert last_response.body.include?('Palindrome detector')
+    assert_equal "Learn Enough Ruby Sample App | Palindrome Detector",
+                  doc(last_response).at_css('title').content
   end
-
 end

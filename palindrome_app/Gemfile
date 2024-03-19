@@ -11,5 +11,5 @@ group :test do
   gem 'rake', '12.3.1' # for running tests
   gem 'minitest', '5.11.3' # for testing
   gem 'minitest-reporters', '1.2.0' # for better test output
-  gem 'nokogiri', '1.8.4' # for parsing HTML in tests
+  gem 'nokogiri', '1.15.6' # for parsing HTML in tests
 end
